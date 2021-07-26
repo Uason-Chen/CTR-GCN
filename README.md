@@ -76,9 +76,11 @@ Put downloaded data into the following directory structure:
 
 - Change the config file depending on what you want.
 
-
-    # Example: training CTRGCN on NTU RGB+D 120 cross subject with GPU 0
-    python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/cs/ctrgcn --device 0
+```
+# Example: training CTRGCN on NTU RGB+D 120 cross subject with GPU 0
+python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/cs/ctrgcn --device 0
+```
+    
 - To train model on NTU RGB+D 60/120 with bone or motion modalities, setting `bone` or `vel` arguments in the config file `default.yaml` or in the command line.
 
 ```
