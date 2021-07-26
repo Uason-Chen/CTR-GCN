@@ -1,0 +1,43 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="22">
+            <item index="0" class="java.lang.String" itemvalue="python-igraph" />
+            <item index="1" class="java.lang.String" itemvalue="torchlight" />
+            <item index="2" class="java.lang.String" itemvalue="torchpack" />
+            <item index="3" class="java.lang.String" itemvalue="argparse" />
+            <item index="4" class="java.lang.String" itemvalue="numpy-1.17.1-cp36-cp36m-manylinux1_x86_64.whl" />
+            <item index="5" class="java.lang.String" itemvalue="scikit_image-0.15.0-cp36-cp36m-manylinux1_x86_64.whl" />
+            <item index="6" class="java.lang.String" itemvalue="en_core_web_lg-2.1.0.tar.gz" />
+            <item index="7" class="java.lang.String" itemvalue="torchtext" />
+            <item index="8" class="java.lang.String" itemvalue="tensorboard_logger-0.1.0-py2.py3-none-any.whl" />
+            <item index="9" class="java.lang.String" itemvalue="spacy-2.1.8-cp36-cp36m-manylinux1_x86_64.whl" />
+            <item index="10" class="java.lang.String" itemvalue="pandas-0.25.0-cp36-cp36m-manylinux1_x86_64.whl" />
+            <item index="11" class="java.lang.String" itemvalue="PyWavelets-1.0.3-cp36-cp36m-manylinux1_x86_64.whl" />
+            <item index="12" class="java.lang.String" itemvalue="yacs" />
+            <item index="13" class="java.lang.String" itemvalue="termcolor" />
+            <item index="14" class="java.lang.String" itemvalue="detectron2" />
+            <item index="15" class="java.lang.String" itemvalue="tensorboard" />
+            <item index="16" class="java.lang.String" itemvalue="av" />
+            <item index="17" class="java.lang.String" itemvalue="opencv-python" />
+            <item index="18" class="java.lang.String" itemvalue="sklearn" />
+            <item index="19" class="java.lang.String" itemvalue="simplejson" />
+            <item index="20" class="java.lang.String" itemvalue="boto3" />
+            <item index="21" class="java.lang.String" itemvalue="torch" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="YAMLSchemaValidation" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>
