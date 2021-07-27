@@ -1,5 +1,5 @@
 # CTR-GCN
-This repo is the official implementation for Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition. The paper is accepted to ICCV2021.
+This repo is the official implementation for [Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition](https://arxiv.org/abs/2107.12213). The paper is accepted to ICCV2021.
 ## Architecture of CTR-GC
 ![image](src/framework.jpg)
 # Prerequisites
@@ -80,7 +80,7 @@ Put downloaded data into the following directory structure:
 # Example: training CTRGCN on NTU RGB+D 120 cross subject with GPU 0
 python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/cs/ctrgcn --device 0
 ```
-    
+
 - To train model on NTU RGB+D 60/120 with bone or motion modalities, setting `bone` or `vel` arguments in the config file `default.yaml` or in the command line.
 
 ```
@@ -114,7 +114,7 @@ python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase tes
 # Example: ensemble four modalities of CTRGCN on NTU RGB+D 120 cross subject
 python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/cs/ctrgcn --bone-dir work_dir/ntu120/cs/ctrgcn_bone --joint-motion-dir work_dir/ntu120/cs/ctrgcn/motion --bone-motion-dir work_dir/ntu120/cs/ctrgcn_bone_motion
 ```
-    
+
 ### Pretrained Models
 
 - Download pretrained models for producing the final results on NTU RGB+D 120 cross subject [[Google Drive]](https://drive.google.com/drive/folders/1C9XUAgnwrGelvl4mGGVZQW6akiapgdnd?usp=sharing).
