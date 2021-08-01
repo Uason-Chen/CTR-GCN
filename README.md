@@ -1,7 +1,7 @@
 # CTR-GCN
 This repo is the official implementation for [Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition](https://arxiv.org/abs/2107.12213). The paper is accepted to ICCV2021.
 
-Note: We also provide a single and strong baseline model, which achieves 83.7% on NTU120 CSub, to facilitate the development of skeleton-based action recognition.
+Note: We also provide a single and strong baseline model, which achieves 83.7% on NTU120 CSub with joint modality only, to facilitate the development of skeleton-based action recognition.
 
 ## Architecture of CTR-GC
 ![image](src/framework.jpg)
