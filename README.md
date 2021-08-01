@@ -1,5 +1,8 @@
 # CTR-GCN
 This repo is the official implementation for [Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition](https://arxiv.org/abs/2107.12213). The paper is accepted to ICCV2021.
+
+Note: We also provide a single and strong baseline model, which achieves 83.7% on NTU120 CSub, to facilitate the development of skeleton-based action recognition.
+
 ## Architecture of CTR-GC
 ![image](src/framework.jpg)
 # Prerequisites
@@ -78,14 +81,16 @@ Put downloaded data into the following directory structure:
 
 ```
 # Example: training CTRGCN on NTU RGB+D 120 cross subject with GPU 0
-python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/cs/ctrgcn --device 0
+python main.py --config config/nturgbd120-cross-subject/default.yaml --work-dir work_dir/ntu120/csub/ctrgcn --device 0
+# Example: training provided baseline on NTU RGB+D 120 cross subject
+python main.py --config config/nturgbd120-cross-subject/default.yaml --model model.baseline.Model--work-dir work_dir/ntu120/csub/baseline --device 0
 ```
 
 - To train model on NTU RGB+D 60/120 with bone or motion modalities, setting `bone` or `vel` arguments in the config file `default.yaml` or in the command line.
 
 ```
 # Example: training CTRGCN on NTU RGB+D 120 cross subject under bone modality
-python main.py --config config/nturgbd120-cross-subject/default.yaml --train_feeder_args bone=True --test_feeder_args bone=True --work-dir work_dir/ntu120/cs/ctrgcn_bone --device 0
+python main.py --config config/nturgbd120-cross-subject/default.yaml --train_feeder_args bone=True --test_feeder_args bone=True --work-dir work_dir/ntu120/csub/ctrgcn_bone --device 0
 ```
 
 - To train model on NW-UCLA with bone or motion modalities, you need to modify `data_path` in `train_feeder_args` and `test_feeder_args` to "bone" or "motion" or "bone motion", and run
@@ -98,7 +103,7 @@ python main.py --config config/ucla/default.yaml --work-dir work_dir/ucla/ctrgcn
 
 ```
 # Example: training your own model on NTU RGB+D 120 cross subject
-python main.py --config config/nturgbd120-cross-subject/default.yaml --model model.your_model.Model --work-dir work_dir/ntu120/cs/your_model --device 0
+python main.py --config config/nturgbd120-cross-subject/default.yaml --model model.your_model.Model --work-dir work_dir/ntu120/csub/your_model --device 0
 ```
 
 ### Testing
@@ -132,7 +137,7 @@ Please cite this work if you find it useful:.
 
     @article{chen2021channel,
     title={Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition},
-    author={Chen, Yuxin and Zhang, Ziqi and Yuan, Chunfeng and Li, Bing and Deng, Ying and Hu Weiming},
+    author={Chen, Yuxin and Zhang, Ziqi and Yuan, Chunfeng and Li, Bing and Deng, Ying and Hu, Weiming},
     journal={Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
     year={2021}
     }
