@@ -287,8 +287,6 @@ class Model(nn.Module):
             self.graph = Graph(**graph_args)
 
         A = self.graph.A # 3,25,25
-        A_eye = np.eye(25)[np.newaxis, :]
-        A = np.concatenate([A_eye, A_eye, A_eye, A_eye, A], axis=0)
 
         self.num_class = num_class
         self.num_point = num_point
