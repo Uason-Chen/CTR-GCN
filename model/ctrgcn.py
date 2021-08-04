@@ -147,9 +147,9 @@ class MultiScale_TemporalConv(nn.Module):
         return out
 
 
-class geom_conv(nn.Module):
+class CTRGC(nn.Module):
     def __init__(self, in_channels, out_channels, rel_reduction=8, mid_reduction=1):
-        super(geom_conv, self).__init__()
+        super(CTRGC, self).__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
         if in_channels == 3 or in_channels == 9:
@@ -168,11 +168,6 @@ class geom_conv(nn.Module):
                 conv_init(m)
             elif isinstance(m, nn.BatchNorm2d):
                 bn_init(m, 1)
-
-    def L2_norm(self, A):
-        A_norm = torch.norm(A, 2, dim=-1, keepdim=True) + 1e-5  # N,C,V,1
-        A = A / A_norm
-        return A
 
     def forward(self, x, A=None, alpha=1):
         x1, x2, x3 = self.conv1(x).mean(-2), self.conv2(x).mean(-2), self.conv3(x)
@@ -209,7 +204,7 @@ class unit_gcn(nn.Module):
         self.num_subset = A.shape[0]
         self.convs = nn.ModuleList()
         for i in range(self.num_subset):
-            self.convs.append(geom_conv(in_channels, out_channels))
+            self.convs.append(CTRGC(in_channels, out_channels))
 
         if residual:
             if in_channels != out_channels:
@@ -294,16 +289,12 @@ class Model(nn.Module):
 
         base_channel = 64
         self.l1 = TCN_GCN_unit(in_channels, base_channel, A, residual=False, adaptive=adaptive)
-
-        # self.max_pool = nn.MaxPool2d((3, 1), (2, 1), padding=(1, 0))
         self.l2 = TCN_GCN_unit(base_channel, base_channel, A, adaptive=adaptive)
         self.l3 = TCN_GCN_unit(base_channel, base_channel, A, adaptive=adaptive)
         self.l4 = TCN_GCN_unit(base_channel, base_channel, A, adaptive=adaptive)
-        # self.interaction = InterAction(64)
         self.l5 = TCN_GCN_unit(base_channel, base_channel*2, A, stride=2, adaptive=adaptive)
         self.l6 = TCN_GCN_unit(base_channel*2, base_channel*2, A, adaptive=adaptive)
         self.l7 = TCN_GCN_unit(base_channel*2, base_channel*2, A, adaptive=adaptive)
-
         self.l8 = TCN_GCN_unit(base_channel*2, base_channel*4, A, stride=2, adaptive=adaptive)
         self.l9 = TCN_GCN_unit(base_channel*4, base_channel*4, A, adaptive=adaptive)
         self.l10 = TCN_GCN_unit(base_channel*4, base_channel*4, A, adaptive=adaptive)
