@@ -99,7 +99,7 @@ python main.py --config config/nturgbd120-cross-subject/default.yaml --train_fee
 python main.py --config config/ucla/default.yaml --work-dir work_dir/ucla/ctrgcn_xxx --device 0
 ```
 
-- To training your own model, put model file `your_model.py` under `./model` and run:
+- To train your own model, put model file `your_model.py` under `./model` and run:
 
 ```
 # Example: training your own model on NTU RGB+D 120 cross subject
