@@ -117,7 +117,7 @@ python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase tes
 - To ensemble the results of different modalities, run 
 ```
 # Example: ensemble four modalities of CTRGCN on NTU RGB+D 120 cross subject
-python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/cs/ctrgcn --bone-dir work_dir/ntu120/cs/ctrgcn_bone --joint-motion-dir work_dir/ntu120/cs/ctrgcn/motion --bone-motion-dir work_dir/ntu120/cs/ctrgcn_bone_motion
+python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/csub/ctrgcn --bone-dir work_dir/ntu120/csub/ctrgcn_bone --joint-motion-dir work_dir/ntu120/csub/ctrgcn_motion --bone-motion-dir work_dir/ntu120/csub/ctrgcn_bone_motion
 ```
 
 ### Pretrained Models
