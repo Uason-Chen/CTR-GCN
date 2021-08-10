@@ -111,7 +111,7 @@ python main.py --config config/nturgbd120-cross-subject/default.yaml --model mod
 - To test the trained models saved in <work_dir>, run the following command:
 
 ```
-python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase test --weights <work_dir>/xxx.pt --device 0
+python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase test --save-score True --weights <work_dir>/xxx.pt --device 0
 ```
 
 - To ensemble the results of different modalities, run 

@@ -28,24 +28,24 @@ if __name__ == "__main__":
     dataset = arg.dataset
     if 'UCLA' in arg.dataset:
         label = []
-        with open('./data/' + 'NW-UCLA' + '/val_label.pkl', 'rb') as f:
+        with open('./data/' + 'NW-UCLA/' + '/val_label.pkl', 'rb') as f:
             data_info = pickle.load(f)
             for index in range(len(data_info)):
                 info = data_info[index]
                 label.append(int(info['label']) - 1)
     elif 'ntu120' in arg.dataset:
         if 'xsub' in arg.dataset:
-            npz_data = np.load('./data/' + 'ntu120' + 'NTU120_CSub.npz')
+            npz_data = np.load('./data/' + 'ntu120/' + 'NTU120_CSub.npz')
             label = np.where(npz_data['y_test'] > 0)[1]
         elif 'xset' in arg.dataset:
-            npz_data = np.load('./data/' + 'ntu120' + 'NTU120_CSet.npz')
+            npz_data = np.load('./data/' + 'ntu120/' + 'NTU120_CSet.npz')
             label = np.where(npz_data['y_test'] > 0)[1]
     elif 'ntu' in arg.dataset:
         if 'xsub' in arg.dataset:
-            npz_data = np.load('./data/' + 'ntu' + 'NTU_CS.npz')
+            npz_data = np.load('./data/' + 'ntu/' + 'NTU60_CS.npz')
             label = np.where(npz_data['y_test'] > 0)[1]
         elif 'xview' in arg.dataset:
-            npz_data = np.load('./data/' + 'ntu' + 'NTU_CV.npz')
+            npz_data = np.load('./data/' + 'ntu/' + 'NTU60_CV.npz')
             label = np.where(npz_data['y_test'] > 0)[1]
     else:
         raise NotImplementedError

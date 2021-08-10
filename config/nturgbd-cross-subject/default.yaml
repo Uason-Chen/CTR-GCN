@@ -3,7 +3,7 @@ work_dir: ./work_dir/ntu60/xsub/ctrgcn_joint
 # feeder
 feeder: feeders.feeder_ntu.Feeder
 train_feeder_args:
-  data_path: data/ntu/NTU_CS.npz
+  data_path: data/ntu/NTU60_CS.npz
   split: train
   debug: False
   random_choose: False
@@ -17,7 +17,7 @@ train_feeder_args:
   bone: False
 
 test_feeder_args:
-  data_path: data/ntu/NTU_CS.npz
+  data_path: data/ntu/NTU60_CS.npz
   split: test
   window_size: 64
   p_interval: [0.95]
