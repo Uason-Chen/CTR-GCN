@@ -122,7 +122,7 @@ python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/csub/ctrgc
 
 ### Pretrained Models
 
-- Download pretrained models for producing the final results on NTU RGB+D 120 cross subject [[Google Drive]](https://drive.google.com/drive/folders/1C9XUAgnwrGelvl4mGGVZQW6akiapgdnd?usp=sharing).
+- Download pretrained models for producing the final results on NTU RGB+D 60&120 cross subject [[Google Drive]](https://drive.google.com/drive/folders/1C9XUAgnwrGelvl4mGGVZQW6akiapgdnd?usp=sharing).
 - Put files to <work_dir> and run **Testing** command to produce the final result.
 
 ## Acknowledgements
