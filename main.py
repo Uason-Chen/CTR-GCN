@@ -41,6 +41,13 @@ def init_seed(seed):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
+def import_class(import_str):
+    mod_str, _sep, class_str = import_str.rpartition('.')
+    __import__(mod_str)
+    try:
+        return getattr(sys.modules[mod_str], class_str)
+    except AttributeError:
+        raise ImportError('Class %s cannot be found (%s)' % (class_str, traceback.format_exception(*sys.exc_info())))
 
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
@@ -184,6 +191,11 @@ def get_parser():
         type=float,
         default=0.0005,
         help='weight decay for optimizer')
+    parser.add_argument(
+        '--lr-decay-rate',
+        type=float,
+        default=0.1,
+        help='decay rate for learning rate')
     parser.add_argument('--warm_up_epoch', type=int, default=0)
 
     return parser
@@ -541,23 +553,6 @@ class Processor():
             self.print_log('Weights: {}.'.format(self.arg.weights))
             self.eval(epoch=0, save_score=self.arg.save_score, loader_name=['test'], wrong_file=wf, result_file=rf)
             self.print_log('Done.\n')
-
-def str2bool(v):
-    if v.lower() in ('yes', 'true', 't', 'y', '1'):
-        return True
-    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
-        return False
-    else:
-        raise argparse.ArgumentTypeError('Boolean value expected.')
-
-
-def import_class(import_str):
-    mod_str, _sep, class_str = import_str.rpartition('.')
-    __import__(mod_str)
-    try:
-        return getattr(sys.modules[mod_str], class_str)
-    except AttributeError:
-        raise ImportError('Class %s cannot be found (%s)' % (class_str, traceback.format_exception(*sys.exc_info())))
 
 if __name__ == '__main__':
     parser = get_parser()
