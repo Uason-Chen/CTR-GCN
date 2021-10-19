@@ -135,12 +135,13 @@ Thanks to the original authors for their work!
 
 Please cite this work if you find it useful:.
 
-    @article{chen2021channel,
-      title={Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition},
-      author={Chen, Yuxin and Zhang, Ziqi and Yuan, Chunfeng and Li, Bing and Deng, Ying and Hu, Weiming},
-      journal={arXiv preprint arXiv:2107.12213},
-      year={2021}
-    }
+      @inproceedings{chen2021channel,
+        title={Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition},
+        author={Chen, Yuxin and Zhang, Ziqi and Yuan, Chunfeng and Li, Bing and Deng, Ying and Hu, Weiming},
+        booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+        pages={13359--13368},
+        year={2021}
+      }
 
 # Contact
 For any questions, feel free to contact: `chenyuxin2019@ia.ac.cn`
