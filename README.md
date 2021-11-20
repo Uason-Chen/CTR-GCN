@@ -26,7 +26,7 @@ Note: We also provide a simple and strong baseline model, which achieves 83.7% o
 
 #### NTU RGB+D 60 and 120
 
-1. Request dataset here: http://rose1.ntu.edu.sg/Datasets/actionRecognition.asp
+1. Request dataset here: https://rose1.ntu.edu.sg/dataset/actionRecognition
 2. Download the skeleton-only datasets:
    1. `nturgbd_skeletons_s001_to_s017.zip` (NTU RGB+D 60)
    2. `nturgbd_skeletons_s018_to_s032.zip` (NTU RGB+D 120)
